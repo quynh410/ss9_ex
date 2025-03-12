@@ -50,12 +50,22 @@ public class Student {
         System.out.print("Nhập giới tính (MALE/FEMALE/OTHER): ");
         while (true) {
             String genderInput = scanner.nextLine().toUpperCase();
-            try {
-                this.std_gender = Gender.valueOf(genderInput);
-                break;
-            } catch (IllegalArgumentException e) {
-                System.out.print("Giới tính không hợp lệ. Nhập lại (MALE/FEMALE/OTHER): ");
+
+            switch (genderInput) {
+                case "MALE":
+                    this.std_gender = Gender.MALE;
+                    break;
+                case "FEMALE":
+                    this.std_gender = Gender.FEMALE;
+                    break;
+                case "OTHER":
+                    this.std_gender = Gender.OTHER;
+                    break;
+                default:
+                    System.out.print("Giới tính không hợp lệ. Nhập lại (MALE/FEMALE/OTHER): ");
+                    continue;
             }
+            break;
         }
 
         System.out.print("Nhập địa chỉ: ");

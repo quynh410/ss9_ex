@@ -35,13 +35,11 @@ public class Bai9 {
                 int newDenominator = this.denominator * other.denominator;
                 return new Fraction(newNumerator, newDenominator);
             }
-
             public Fraction multiply(Fraction other) {
                 int newNumerator = this.numerator * other.numerator;
                 int newDenominator = this.denominator * other.denominator;
                 return new Fraction(newNumerator, newDenominator);
             }
-
             public Fraction divide(Fraction other) {
                 if (other.numerator == 0) {
                     throw new ArithmeticException("Không thể chia cho phân số có tử số bằng 0!");
